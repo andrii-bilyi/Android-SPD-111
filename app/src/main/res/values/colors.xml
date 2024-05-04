@@ -15,4 +15,6 @@
     <color name="calc_digit_bg">#3B3B3B</color>
     <color name="calc_equal_bg">#4CC1FE</color>
     <color name="calc_history_fg">#9B9B9B</color>
+    <color name="calc_result_bg_land">#292929</color>
+
 </resources>

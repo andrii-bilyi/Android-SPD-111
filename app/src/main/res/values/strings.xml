@@ -4,8 +4,9 @@
     <!--MAIN ACTIVITY -->
     <string name="main_tv_title">Основи Андроїд</string>
     <string name="main_btn_calc">Калькулятор</string>
+    <string name="main_btn_game">Свайпи. Гра</string>
 
-    <!--MAIN ACTIVITY -->
+    <!--CALC ACTIVITY -->
     <string name="calc_tv_title">Calculator</string>
     <string name="calc_btn_percent">\u0025</string>
     <string name="calc_btn_ce">CE</string>
@@ -13,14 +14,14 @@
     <string name="calc_btn_backspace">\u232B</string>
     <string name="calc_btn_inverse">\u00B9/\u2093</string>
     <string name="calc_btn_square">x\u00B2</string>
-    <string name="calc_btn_sqrt">\u221A</string>
-    <string name="calc_btn_divide">\u00F7</string>
-    <string name="calc_btn_multiply">\u00D7</string> <!--\u2715-->
-    <string name="calc_btn_minus">\u002D</string>
-    <string name="calc_btn_plus">\u002B</string>
-    <string name="calc_btn_opposite">\u207A\u2215\u208B</string>
+    <string name="calc_btn_sqrt">\u221A\u2093\u0304</string>  <!--\u221A-->
+    <string name="calc_btn_divide">\u00F7</string>  <!--\u2797-->
+    <string name="calc_btn_multiply">\u2715</string> <!--\u00D7-->
+    <string name="calc_btn_minus">\u2014</string> <!--\u002D-->
+    <string name="calc_btn_plus">\uFF0B</string> <!--\u002B-->
+    <string name="calc_btn_opposite">\u207A\u2215\u208B</string> <!--\u002D-->
     <string name="calc_btn_point">\u002C</string>
-    <string name="calc_btn_equality">\u003D</string>
+    <string name="calc_btn_equality">\uFF1D</string> <!--\u003D-->
     <string name="calc_btn_0">0</string>
     <string name="calc_btn_1">1</string>
     <string name="calc_btn_2">2</string>
@@ -31,7 +32,10 @@
     <string name="calc_btn_7">7</string>
     <string name="calc_btn_8">8</string>
     <string name="calc_btn_9">9</string>
+    <string name="calc_limit_exceeded">limit exceeded</string>
+    <string name="calc_zero_division">Division by zero</string>
 
+    <!--GAME ACTIVITY -->
 
 
 </resources>
