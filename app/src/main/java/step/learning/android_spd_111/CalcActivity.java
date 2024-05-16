@@ -179,21 +179,6 @@ public class CalcActivity extends AppCompatActivity {
         history += result + " \uFF0B ";
         operand = '+';
         tvHistory.setText(history);
-
-//        String result = tvResult.getText().toString();
-//        String history = (String) tvHistory.getText();
-//        history += result + " \uFF0B ";
-//        int equalsIndex = history.indexOf('=');
-//        if (equalsIndex != -1) { // Проверяем, найден ли знак равенства
-//            history = history.substring(equalsIndex + 1);
-//        }
-//        aOperand = true;
-//        operand = '+';
-//        if(result!=""){
-//            num1 = Double.parseDouble(result);
-//        }
-//        tvHistory.setText(history);
-        //tvResult.setText("");
     }
 
     private void onMinusClick(View view) {
@@ -202,22 +187,6 @@ public class CalcActivity extends AppCompatActivity {
         history += result + " \u2014 ";
         operand = '-';
         tvHistory.setText(history);
-
-
-//        String result = tvResult.getText().toString();
-//        String history = (String) tvHistory.getText();
-//        history += result + " \u2014 ";
-//        int equalsIndex = history.indexOf('=');
-//        if (equalsIndex != -1) { // Проверяем, найден ли знак равенства
-//            history = history.substring(equalsIndex + 1);
-//        }
-//        aOperand = true;
-//        operand = '-';
-//        if(result!=""){
-//            num1 = Double.parseDouble(result);
-//        }
-//        tvHistory.setText(history);
-        //tvResult.setText("");
     }
 
     private void onMultiplyClick(View view) {
@@ -226,23 +195,6 @@ public class CalcActivity extends AppCompatActivity {
         history += result + " \u2715 ";
         operand = '*';
         tvHistory.setText(history);
-
-
-//        String result = tvResult.getText().toString();
-//        String history = (String) tvHistory.getText();
-//        history += result + " \u2715 ";
-//        int equalsIndex = history.indexOf('=');
-//        if (equalsIndex != -1) { // Проверяем, найден ли знак равенства
-//            history = history.substring(equalsIndex + 1);
-//        }
-//        aOperand = true;
-//        operand = '*';
-//        if(result!=""){
-//            num1 = Double.parseDouble(result);
-//        }
-//        tvHistory.setText(history);
-        //tvResult.setText("");
-
     }
 
     private void onDivideClick(View view) {
@@ -251,21 +203,6 @@ public class CalcActivity extends AppCompatActivity {
         history += result + " \u00F7 ";
         operand = '/';
         tvHistory.setText(history);
-
-//        String result = tvResult.getText().toString();
-//        String history = (String) tvHistory.getText();
-//        history += result + " \u00F7 ";
-//        int equalsIndex = history.indexOf('=');
-//        if (equalsIndex != -1) { // Проверяем, найден ли знак равенства
-//            history = history.substring(equalsIndex + 1);
-//        }
-//        aOperand = true;
-//        operand = '/';
-//        if(result!=""){
-//            num1 = Double.parseDouble(result);
-//        }
-//        tvHistory.setText(history);
-        //tvResult.setText("");
     }
 
 
@@ -321,7 +258,6 @@ public class CalcActivity extends AppCompatActivity {
         }
         tvResult.setText(result);
     }
-
     private void onPointClick(View view) {
         String result = tvResult.getText().toString();
         if (result.contains(".")) {
@@ -354,10 +290,6 @@ public class CalcActivity extends AppCompatActivity {
                 ? String.valueOf((int)x)
                 : String.valueOf(x);
         tvResult.setText(result);
-
-        //String history = (String) tvHistory.getText();
-//        history += num2;
-//        tvHistory.setText(history);
     }
 
     private void onInverseClick(View view){

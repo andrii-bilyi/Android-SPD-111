@@ -36,6 +36,9 @@
     <string name="calc_zero_division">Division by zero</string>
 
     <!--GAME ACTIVITY -->
-
+    <string name="game_title">GAME</string>
+    <string name="game_text_score">Score:</string>
+    <string name="game_btn_pause">Pause</string>
+    <string name="game_btn_record">Record</string>
 
 </resources>
