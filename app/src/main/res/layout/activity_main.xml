@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintVertical_bias="0.20" />
 
     <Button
         android:id="@+id/main_btn_game"
@@ -49,6 +49,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.66" />
+        app:layout_constraintVertical_bias="0.40" />
+
+    <Button
+        android:id="@+id/main_btn_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/main_btn_bg"
+        android:text="@string/main_btn_chat"
+        android:textColor="@color/main_btn_fg"
+        android:textSize="20sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.60" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

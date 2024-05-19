@@ -5,6 +5,7 @@
     <string name="main_tv_title">Основи Андроїд</string>
     <string name="main_btn_calc">Калькулятор</string>
     <string name="main_btn_game">Свайпи. Гра</string>
+    <string name="main_btn_chat">Мережа. Чат</string>
 
     <!--CALC ACTIVITY -->
     <string name="calc_tv_title">Calculator</string>
@@ -40,5 +41,9 @@
     <string name="game_text_score">Score:</string>
     <string name="game_btn_pause">Pause</string>
     <string name="game_btn_record">Record</string>
+
+    <!--CHAT ACTIVITY -->
+    <string name="chat_title">Chat</string>
+    <string name="chat_scroller_description">Chat messages</string>
 
 </resources>
