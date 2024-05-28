@@ -43,7 +43,7 @@
     <string name="game_btn_record">Record</string>
 
     <!--CHAT ACTIVITY -->
-    <string name="chat_title">Chat</string>
+    <string name="chat_title">Нік: </string>
     <string name="chat_scroller_description">Chat messages</string>
 
 </resources>
