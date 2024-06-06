@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -68,6 +70,8 @@ public class ChatActivity extends AppCompatActivity {
     private ImageButton toggleSoundButton;
     private boolean isMuted = false;
 
+    private Animation clickAnimation;
+    private Animation clickAnimation2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +84,8 @@ public class ChatActivity extends AppCompatActivity {
             return insets;
         });
 
+        clickAnimation = AnimationUtils.loadAnimation(this,R.anim.chat_move);
+        clickAnimation2 = AnimationUtils.loadAnimation(this,R.anim.chat_opacity);
         updateChat();
 
         urlToImageView(
@@ -107,31 +113,23 @@ public class ChatActivity extends AppCompatActivity {
     }
     private void onToggleSoundClick(View view) {
         // Переключаем состояние звука
-        if (isMuted) {
-            unmute();
-        } else {
-            mute();
-        }
-
+        if (isMuted) { unmute(); }
+        else { mute(); }
         // Обновляем флаг состояния
         isMuted = !isMuted;
-
-        // Обновите изображение кнопки после изменения состояния
+        // Обновление изображения кнопки после изменения состояния
         updateButtonImage();
     }
-
     private void mute() {
         // Выключаем звук медиаплеера
         newMessageSound.setVolume(0, 0);
     }
-
     private void unmute() {
         // Включаем звук медиаплеера
         newMessageSound.setVolume(1, 1);
     }
-
     private void updateButtonImage() {
-        // Обновите изображение кнопки в зависимости от текущего состояния звука
+        // Обновление изображения кнопки в зависимости от текущего состояния звука
         if (isMuted) {
             toggleSoundButton.setImageResource(android.R.drawable.ic_lock_silent_mode);
         } else {
@@ -169,15 +167,31 @@ public class ChatActivity extends AppCompatActivity {
         handler.postDelayed(this::updateChat, 3000);
     }
     private void onSendClick(View v){
+        v.startAnimation(clickAnimation);
+        clickAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                v.startAnimation(clickAnimation2);
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
         // Проверяем, отключен ли уже EditText
         if (!isEditTextDisabled) {
             // Сделать EditText неактивным
             etNik.setEnabled(false);
-
             // Обновить флаг состояния
             isEditTextDisabled = true;
         }
-
         String author = etNik.getText().toString();
         String message = etMessage.getText().toString();
         etMessage.setText("");

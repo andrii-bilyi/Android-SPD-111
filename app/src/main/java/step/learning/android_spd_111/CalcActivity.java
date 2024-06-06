@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +27,7 @@ public class CalcActivity extends AppCompatActivity {
     private static Double num2;
     private Character operand;
 
+    private Animation clickAnimation;
 
     @SuppressLint("DiscouragedApi")
     @Override
@@ -37,6 +40,7 @@ public class CalcActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        clickAnimation = AnimationUtils.loadAnimation(this,R.anim.calc);
         tvHistory = findViewById(R.id.calc_tv_history);
         tvResult = findViewById(R.id.calc_tv_result);
         if(savedInstanceState == null) { //немає збереженого стану - перший запуск
@@ -85,6 +89,7 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     private void onEqualityClick(View view) {
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         String history = (String) tvHistory.getText();
         history += result + " =";
@@ -174,6 +179,7 @@ public class CalcActivity extends AppCompatActivity {
         return history;
     }
     private void onPlusClick(View view) {
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         String history = isOperand();
         history += result + " \uFF0B ";
@@ -182,6 +188,7 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     private void onMinusClick(View view) {
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         String history = isOperand();
         history += result + " \u2014 ";
@@ -190,6 +197,7 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     private void onMultiplyClick(View view) {
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         String history = isOperand();
         history += result + " \u2715 ";
@@ -198,6 +206,7 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     private void onDivideClick(View view) {
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         String history = isOperand();
         history += result + " \u00F7 ";
@@ -207,6 +216,7 @@ public class CalcActivity extends AppCompatActivity {
 
 
     private void onSquareClick(View view) {
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         double x = Double.parseDouble(result);
         x *= x;
@@ -224,6 +234,7 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     private void onSqrtClick(View view) {
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         double x = Double.parseDouble(result);
         double num = 1;
@@ -246,6 +257,7 @@ public class CalcActivity extends AppCompatActivity {
         tvHistory.setText(history);
     }
     private void onOppositeClick(View view) {
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         if(result.startsWith("-")){
             // Если строка начинается с минуса, убираем его
@@ -259,6 +271,7 @@ public class CalcActivity extends AppCompatActivity {
         tvResult.setText(result);
     }
     private void onPointClick(View view) {
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         if (result.contains(".")) {
             return;
@@ -269,6 +282,7 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     private void onBackspaceClick(View view) {
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         if(!result.isEmpty()){
             result = result.substring(0, result.length() - 1);
@@ -280,6 +294,7 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     private void onPercentClick(View view) {
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         double x = Double.parseDouble(result);
         if(num1 != null){
@@ -293,6 +308,7 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     private void onInverseClick(View view){
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         double x = Double.parseDouble(result);
         if(x == 0){
@@ -313,9 +329,11 @@ public class CalcActivity extends AppCompatActivity {
         tvHistory.setText(history);
     }
     private void onCEClick(View view){
+        view.startAnimation(clickAnimation); //применение анимации
         tvResult.setText("0");
     }
     private void onCClick(View view){
+        view.startAnimation(clickAnimation); //применение анимации
         tvResult.setText("0");
         tvHistory.setText("");
 
@@ -326,6 +344,7 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     private void onDigitButtonClick(View view){
+        view.startAnimation(clickAnimation); //применение анимации
         String result = tvResult.getText().toString();
         if(result.length() >= 10){
             Toast.makeText(this, R.string.calc_limit_exceeded, Toast.LENGTH_SHORT).show();

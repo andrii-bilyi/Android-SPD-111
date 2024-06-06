@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXScale="1.0"
+    android:fromYScale="1.0"
+    android:toXScale="1.5"
+    android:toYScale="1.5"
+    android:duration="350"
+
+    android:pivotX="50%"
+    android:pivotY="50%"
+
+    android:repeatMode="reverse"
+    android:repeatCount="3"
+/>
+<!--
+Деякі анімації керують кількома параметрами одночасно
+Поняття "нерухомої точки" - точка віджету, яка не змінює своє положення під час анімації
+
+android:repeatCount="1" - це кількість повторень (+1 базовий програш)
+-->
